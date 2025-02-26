@@ -38,7 +38,7 @@ class Display(Process):
 
                 frame[y:y + blur.shape[0], x:x + blur.shape[1]] = blur
 
-                # self.show_detection(frame)
+                self.show_detection(frame)
 
     def show_detection(self, frame: ndarray):
         """Displays the frame with all detections and a timestamp.
