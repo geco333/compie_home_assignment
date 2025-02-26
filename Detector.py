@@ -29,8 +29,6 @@ class Detector(Process):
 
                 break
             elif isinstance(frame, ndarray):
-                logging.debug("Detector")
-
                 frame_delta = cv2.absdiff(self.first_frame, frame)
                 thresh = cv2.threshold(frame_delta, 25, 255, cv2.THRESH_BINARY)[1]
 

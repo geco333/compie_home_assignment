@@ -20,8 +20,6 @@ class Display(Process):
                 logging.info("Display shutting down.")
                 break
             elif isinstance(frame_data, tuple):
-                logging.debug("Display")
-
                 frame, x, y, w, h = frame_data
 
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 255, 255), 2)
