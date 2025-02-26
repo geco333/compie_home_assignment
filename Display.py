@@ -13,6 +13,11 @@ class Display(Process):
         self.display_queue = display_queue
 
     def run(self):
+        """Check for data in `display_queue` until `done` is passed,
+            when frame data is received create a rectangle around the detection,
+            add a timestamp in the upper left corner of the frame
+            and display the frame to the user."""
+
         while True:
             frame_data = self.display_queue.get()
 

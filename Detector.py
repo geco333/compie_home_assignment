@@ -5,8 +5,6 @@ import cv2
 import imutils
 from numpy import ndarray
 
-from Display import Display
-
 
 class Detector(Process):
     def __init__(self,
@@ -20,6 +18,10 @@ class Detector(Process):
         self.display_queue = display_queue
 
     def run(self):
+        """Run until `done` is passed to `display_queue` from the main process,
+            for each frame pulled from the queue use OpenCV to detect changes
+            from `first_frame`, pass all changes to `Display` for processing."""
+
         while True:
             frame = self.frame_queue.get()
 
